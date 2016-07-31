@@ -1,0 +1,102 @@
+OOA：分析
+OOD：设计
+OOP：编码
+OOT：测试
+OOSM：维护
+
+MVC设计模式：
+   V：视图（用户界面）
+   C：控制器
+   M：模型
+
+什么是类
+东西的分类
+
+
+
+	   //	   lay1.createWindow(g);
+       //	   lay2.createWindow(g);
+           //	   lay3.createWindow(g);
+	
+	// Image img =new ImageIcon("Graphics/window/windows4.jpg").getImage();//创建了一个图片对象
+//	// g.drawImage(img, 0, 0, null);//显示图片
+//	 int x=12;
+//	 int y=12;
+//	 int w=515;
+//	 int k=26;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//	 int h=577;
+//	 int imgW=img.getWidth(null);
+//	// System.out.println(imgW);
+//	 int imgH=img.getHeight(null);
+//	 //System.out.println(imgH);
+//	 //上
+//	 g.drawImage(img,   x,       y,     x+w,  y+k,     x,  y,   w,  k, null);
+//	 //左
+//	 g.drawImage(img,   x,       y+k,   x+k,  y+k+h,   x,  y+k, k,  h, null);
+//	 //右
+//     g.drawImage(img, x+(w-k),   y+k,   x+w,  y+k+h,   x,  y+k, k,  h, null);
+//     //下
+//	 g.drawImage(img,   x,       y+k+h, x+w,  y+h+2*k, x,  y,   w,  k, null);
+
+
+
+
+//	 private Lay lay1=new Lay(40,32,334,279);//出现很多相同的类的对象考虑使用数组
+//	 private Lay lay2=new Lay(40,343,334,279);
+//	 private Lay lay3=new Lay(414,32,334,590);

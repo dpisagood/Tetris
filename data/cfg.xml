@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+<frame window_w="512" window_h="580" title="java俄罗斯方块" windowUp="32" width="1165" height="700"
+ padding="16" border="5" sizeRol="5" loseIdx="8">//属性
+   <button w="50" h="80">
+   		<start x="835" y="75"/>
+   		<userConfig x="1005" y="75"/>
+   </button>
+   <layer className="dp.els.ui.LayerBackground" x="0" y="0" w="0" h="0"/>
+   <layer className="dp.els.ui.LayerDataBase" x="40" y="32" w="334" h="279"/>
+   <layer className="dp.els.ui.LayDisk" x="40" y="343" w="334" h="279"/>
+   <layer className="dp.els.ui.LayerGame" x="414" y="23" w="330" h="608"/>
+   <layer className="dp.els.ui.LayerButton" x="788" y="32" w="334" h="124"/>
+   <layer className="dp.els.ui.LayerNext" x="790" y="188" w="173" h="116"/>
+   <layer className="dp.els.ui.LayerLevel" x="964" y="188" w="158" h="116"/>
+   <layer className="dp.els.ui.LayerPoint" x="788" y="336" w="334" h="150"/>
+   <layer className="dp.els.ui.LayerAbout" x="788" y="528" w="334" h="94"/>
+ </frame>
+
+   <system maxX="9" maxY="18" minX="0" minY="0" levelup="20">
+   
+   	<rect round="true">
+   		<Point x="4" y="0"/><Point x="3" y="0"/><Point x="5" y="0"/><Point x="6" y="0"/>
+   	</rect>
+   	
+   	
+   	<rect round="true">
+   		<Point x="4" y="0"/><Point x="3" y="0"/><Point x="5" y="0"/><Point x="4" y="1"/>
+   	</rect>
+   	
+   	
+   	 <rect round="true">
+   		<Point x="4" y="0"/><Point x="3" y="0"/><Point x="5" y="0"/><Point x="3" y="1"/>
+   	</rect>
+   	
+   	 <rect round="true">
+   		<Point x="4" y="0"/><Point x="5" y="0"/><Point x="3" y="1"/><Point x="4" y="1"/>
+   	</rect>
+   	
+   	
+   	<rect round="false">
+   		<Point x="4" y="0"/><Point x="5" y="0"/><Point x="4" y="1"/><Point x="5" y="1"/>
+   	</rect>
+   	
+   	
+   	<rect round="true">
+   		<Point x="4" y="0"/><Point x="3" y="0"/><Point x="5" y="0"/><Point x="5" y="1"/>
+   	</rect>
+   	
+   	<rect round="true">
+   		<Point x="4" y="0"/><Point x="3" y="0"/><Point x="4" y="1"/><Point x="5" y="1"/>
+   	</rect>
+   	
+   </system>
+   <data maxRow="5">
+   <dataA className="dp.els.dao.DataBase">
+   		<param key ="driver" value="oracle.jdbc.driver.OracleDriver"/>
+   		<param key ="dbUrl" value="jdbc:oracle:thin:@localhost:1521:dingpeng"/>
+   		<param key ="dbUser" value="scott"/>
+   		<param key ="dbPwd" value="tiger"/>
+   </dataA>
+   
+   <dataB className="dp.els.dao.DataDisk">
+   		<param key ="path" value="data/recode.dat"/>
+   		<param key ="" value=""/>
+   		<param key ="" value=""/>
+   		<param key ="" value=""/>
+   		<param key ="" value=""/>
+   </dataB>
+   
+   </data>>
+  
+
+</game>
+
+
+
+
+
+
+
+
+
+
+
+
