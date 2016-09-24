@@ -25,13 +25,13 @@ public class Img {
     //背景图片（LayerBackGround）
 	public  static Image TEMP =new ImageIcon("Graphics/background/bg01.jpg").getImage();
 	
-	//开始按钮
+	//开始按钮(button中有个传入ImageIcon的构造方法)
 	public  static ImageIcon BTN_START =new ImageIcon("Graphics/string/strat.png");
 
-	//设置按钮
+	//设置按钮(button中有个传入ImageIcon的构造方法)
 	public  static ImageIcon BTN_CONFIG =new ImageIcon("Graphics/string/config.png");
-	
-	
+	//暂停
+	public  static Image PAUSE =new ImageIcon("Graphics/string/pause.png").getImage();
 	
 	
 	//制作人签名图片（暂时没有）（LayerAbout）

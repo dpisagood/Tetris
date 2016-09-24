@@ -1,6 +1,8 @@
-package dp.els.ui;
+package dp.els.ui.window;
 
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,8 @@ import config.LayerConfig;
 import dp.els.control.GameControl;
 import dp.els.control.PlayerControl;
 import dp.els.dto.GameDto;
+import dp.els.ui.Img;
+import dp.els.ui.Layer;
 
 @SuppressWarnings("serial")
 public class JPanelGame extends JPanel{
@@ -26,55 +30,60 @@ public class JPanelGame extends JPanel{
 		private GameControl gameControl=null;
 			
 		private ArrayList<Layer> layers=null;//出现很多相同的类的对象考虑使用数组
-		private GameDto dto =null;
-		public JPanelGame(GameDto dto){
+		public JPanelGame(GameControl gamecontrol,GameDto dto){
+		 this.gameControl=gamecontrol;
 		 this.setLayout(null);
-		//获得dto对象
-		 this.dto =dto;
-		//初始化层
-		 initlayer();
 		 //初始化组件
-		 initComponent();
-		 initButton();
+		 this.initComponent();
+		//初始化层
+		 this.initlayer(dto);
+		 //安装键盘监听器
+		 this.addKeyListener(new PlayerControl(gameControl));
 	 }
+		
+	//控制按钮是否可以点击
+	public void buttonSwitch(boolean onOff){
+		this.btnStart.setEnabled(onOff);
+		this.btnConfig.setEnabled(onOff);
+	}
 	 
-	 private void initButton() {
+	 
+
+	/**
+	  * 初始化组件
+	  * */
+    private void initComponent(){
 		//初始化按钮
 		 this.btnStart=new JButton(Img.BTN_START);
 		 this.btnStart.setBounds(
 				 GameConfig.getFrameConfig().getButtonConfig().getStartX(),
 				 GameConfig.getFrameConfig().getButtonConfig().getStartY(),
 				 BTN_SIZE_W, BTN_SIZE_H);
+		 this.btnStart.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				gameControl.start();
+			}
+		});
 		 this.add(btnStart);
 		 this.btnConfig=new JButton(Img.BTN_CONFIG);
 		 this.btnConfig.setBounds(
 				 GameConfig.getFrameConfig().getButtonConfig().getUserConfigX(),
 				 GameConfig.getFrameConfig().getButtonConfig().getUserConfigY(),
 				 BTN_SIZE_W, BTN_SIZE_H);
+		 this.btnConfig.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				gameControl.showUserConfig();
+			}
+		});
 		 this.add(btnConfig);
-	}
-	/**
-	  * 安装玩家控制器
-	  * */
-	 public void setGameControl(PlayerControl control){
-		 this.addKeyListener(control);
-	 }
-	 
-	 public void setGameControl(GameControl gameControl) {
-		this.gameControl = gameControl;
-	}
-
-	/**
-	  * 初始化组件
-	  * */
-    private void initComponent(){
-    	//创建一个游戏控制器，把JPanelGame(this)交给GameCtrol监听控制
-    	//(传入实现KeyListener接口的监听器)又将GameControl交给玩家控制器控制
-	   }
+    }
    /**
     * 初始化层
     * */
-    private void initlayer(){
+    private void initlayer(GameDto dto){
 				 try {
 					 //获得游戏配置（使用工厂类实例化GameConfig对象）
 		 FrameConfig fCfg=GameConfig.getFrameConfig();
@@ -96,7 +105,7 @@ public class JPanelGame extends JPanel{
 		    		layerCfg.getH()
 		    		);
 		    //设置游戏数据对象
-		    layer.setDto(this.dto);
+		    layer.setDto(dto);
 		    //把创建的Layer对象放入集合
 		            layers.add(layer);
 				 }

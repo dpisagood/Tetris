@@ -1,4 +1,4 @@
-package dp.els.ui.config;
+package dp.els.ui.window;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -17,16 +17,20 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 
+import dp.els.control.GameControl;
 import dp.els.util.FrameUtil;
 
-public class FrameConfig extends JFrame {
+public class JFrameConfig extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private final static String PATH="data/control.dat";
 	private JButton btnOK=new JButton("确定");
@@ -35,8 +39,16 @@ public class FrameConfig extends JFrame {
 	private final static Image IMG_PSP=new ImageIcon("data/psp.jpg").getImage();
 	private  TextCtrl[] keyTexts=new TextCtrl[8];
 	private  final static  String[] METHOD_NAMES={"keyRight","keyUp","keyLeft","keyDown","keyFunLeft","keyFunUp","keyFunRight","keyFunDown"};
-	private JLabel  errorMsg=new JLabel();
-	public FrameConfig(){
+	private JPanel skinView=null;
+	private DefaultListModel skinData=new DefaultListModel();
+	private JLabel  errorMsg=new JLabel();//姓名输入错误提示
+	private JList skinList=null;
+//	private Image temp_skinImg=new ImageIcon();
+	private GameControl gameControl;
+	
+	public JFrameConfig(GameControl gameControl){
+		//获得游戏控制器对象
+		this.gameControl=gameControl;
 		//初始化按键输入框
 		this.initKeyText();
 		//设置布局为边界布局
@@ -52,9 +64,6 @@ public class FrameConfig extends JFrame {
 		this.setSize(1035, 540);
 		//居中
 		FrameUtil.setFrameCenter(this);
-		//TODO p测试用
-		this.setDefaultCloseOperation(3);
-		this.setVisible(true);
 	}
 	
 	//初始化按键输入框，然后读取配置文件中的配置，即某个按键对应某个功能的映射
@@ -103,6 +112,7 @@ public class FrameConfig extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(writeConfig()){//写入配置成功的话
 					setVisible(false);//关闭窗口
+					gameControl.setOver();
 				}
 			}
 		});
@@ -115,6 +125,7 @@ public class FrameConfig extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);//关闭窗口
+				gameControl.setOver();
 			}
 		});
 		jp.add(this.btnCancel);
@@ -161,17 +172,33 @@ public class FrameConfig extends JFrame {
 	}
 	
 	
-	
-	
 	//创建主面板
 	private JTabbedPane createMainPanle() {
 		//选项窗格
 		JTabbedPane jtp=new JTabbedPane();
-		jtp.addTab("控制设置", createControlPane());
-		jtp.addTab("皮肤设置", new JLabel("皮肤"));
+		jtp.addTab("控制设置", this.createControlPane());
+		jtp.addTab("皮肤设置", this.createSkinPanel());
 		return jtp;
 	}
 	
+	//玩家皮肤面板
+	private Component createSkinPanel() {
+		JPanel panel=new JPanel(new BorderLayout());
+		//TODO 添加内容
+		this.skinData.addElement("1111");
+		this.skinData.addElement("2222sssssssssss");
+		this.skinData.addElement("3333");
+		this.skinList=new JList(this.skinData);
+		this.skinView=new JPanel(){
+			@Override
+			public void paintComponent(Graphics g){
+//				g.drawImage(img, x, y, observer);
+			}
+		};
+		panel.add(new JScrollPane(this.skinList),BorderLayout.WEST);
+		return panel;
+	}
+
 	//玩家控制设置面板
 	private JPanel createControlPane() {
 		JPanel jpanel=new JPanel(){
@@ -187,8 +214,5 @@ public class FrameConfig extends JFrame {
 			jpanel.add(s);
 		}
 		return jpanel;
-	}
-	public static void main(String[] args) {
-		new FrameConfig();
 	}
 }

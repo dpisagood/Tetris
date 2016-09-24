@@ -1,4 +1,4 @@
-package dp.els.ui;
+package dp.els.ui.window;
 
 import javax.swing.JFrame;
 

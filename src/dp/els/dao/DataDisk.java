@@ -50,7 +50,7 @@ public DataDisk(HashMap<String,String> param){
 		//ÖØÐÂÐ´Èë
 		ObjectOutputStream oos=null;
 		try {
-			oos=new ObjectOutputStream(new FileOutputStream("save/recode.dat"));
+			oos=new ObjectOutputStream(new FileOutputStream("data/recode.dat"));
 			oos.writeObject(players);
 		} catch (Exception e) {
 			e.printStackTrace();

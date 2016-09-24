@@ -6,10 +6,13 @@ import java.util.List;
 
 import config.GameConfig;
 import dp.els.entity.GameAct;
+import dp.els.util.GameFunction;
 //数据类
 public class GameDto {
-	private static final int GAMEZONE_W=GameConfig.getSystemConfig().getMaxX()+1;
-	private static final int GAMEZONE_H=GameConfig.getSystemConfig().getMaxY()+1;
+	//游戏宽度
+	public static final int GAMEZONE_W=GameConfig.getSystemConfig().getMaxX()+1;
+	//游戏高度
+	public static final int GAMEZONE_H=GameConfig.getSystemConfig().getMaxY()+1;
 	//数据库记录
     private List<Player> dbRecode;
     //本地硬盘记录
@@ -20,14 +23,53 @@ public class GameDto {
      private int nowlevel;//等级
      private int nowPoint ;//现在的分数
      private int nowRemoveLine;//消行
+     private boolean start;//游戏是否是开始状态
+     private boolean showShadow;//是否显示阴影
+     private boolean pause;
+     private long sleepTime;//线程休眠时间
      
-     
-     public GameDto(){
+     public long getSleepTime() {
+		return sleepTime;
+	}
+
+	public boolean isPause() {
+		return pause;
+	}
+
+	public void changePause() {
+			this.pause = !this.pause;
+	}
+
+	public boolean isShowShadow() {
+		return showShadow;
+	}
+
+	public void changeShowShadow() {
+		this.showShadow=!this.showShadow;
+	}
+
+	public boolean isStart() {
+		return start;
+	}
+
+	public void setStart(boolean start) {
+		this.start = start;
+	}
+
+	public GameDto(){
     	 dtoInit();
      }
      
+	/**
+	 * 输了之后重新开始初始化游戏的各个参数
+	 */
      public  void dtoInit() {
 		this.gameMap=new boolean[GAMEZONE_W][GAMEZONE_H];
+		this.nowlevel=1;
+		this.nowPoint=0;
+		this.nowRemoveLine=0;
+		this.pause=false;
+		this.sleepTime=GameFunction.getSleepTimeByLevel(this.nowlevel);
 	}
 
 	public int getNowlevel() {
@@ -35,7 +77,8 @@ public class GameDto {
 	}
 
 	public void setNowlevel(int nowlevel) {
-		this.nowlevel = nowlevel;
+		this.nowlevel = nowlevel<16?nowlevel:16;
+		this.sleepTime=GameFunction.getSleepTimeByLevel(this.nowlevel);
 	}
 
 	
@@ -44,13 +87,6 @@ public class GameDto {
 	}
 	
 	public void setDbRecode(List<Player> dbRecode) {
-//		if(dbRecode==null){
-//			dbRecode=new ArrayList<Player>();
-//		}
-//		while(dbRecode.size()<5){
-//			dbRecode.add(new Player("No Data",0));
-//		}
-//		Collections.sort(dbRecode);
 		this.Sort(dbRecode);
 		this.dbRecode = dbRecode;
 	}

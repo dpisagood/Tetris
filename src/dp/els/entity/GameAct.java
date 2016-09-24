@@ -76,14 +76,14 @@ public class GameAct {
 		   int newY =actPoint[0].y - actPoint[0].x + actPoint[i].x;
 		   if(this.isOverMap(newX, newY,gameMap) ){
 			   return;
-	   }
-	}
+		   }
+	   	}
 	   for (int i = 0; i < actPoint.length; i++) {
 		   int newX =actPoint[0].y + actPoint[0].x - actPoint[i].y;
 		   int newY =actPoint[0].y - actPoint[0].x + actPoint[i].x;
 		   actPoint[i].x=newX;
 		   actPoint[i].y=newY;	
-	}
+	   	}
 	}
 	/**
 	 *ÅÐ¶ÏÊÇ·ñ³¬³ö±ß½ç
