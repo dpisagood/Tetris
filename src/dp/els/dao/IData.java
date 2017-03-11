@@ -8,6 +8,7 @@ import dp.els.dto.Player;
 public interface IData {
 	//获得数据
 	public List<Player> getData();
+	//保存数据0
 	public void saveData(Player players);
 	
 }

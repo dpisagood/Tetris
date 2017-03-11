@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 /**
  * ´°¿Ú¾ÓÖÐ
- * @author wl
+ * @author DP
  *
  */
 public class FrameUtil {

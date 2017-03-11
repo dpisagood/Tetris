@@ -13,6 +13,11 @@ import javax.swing.JTextField;
 import dp.els.control.GameControl;
 import dp.els.util.FrameUtil;
 
+/**
+ * 游戏结束后保存分数窗口
+ * @author DP
+ *
+ */
 public class JFrameSavePoint extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JButton btnOk=null;

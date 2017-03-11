@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="dp.els.config.DataConfig" x="436" y="265">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="dp.els.config.DataInterfaceConfig"
+            endpointName="dataB" kind="Simple">
+            <Point x="387" y="381"/>
+            <Point x="316" y="475"/>
+        </Association>
+        <Association
+            destinationClassName="dp.els.config.DataInterfaceConfig"
+            endpointName="dataA" kind="Simple">
+            <Point x="483" y="405"/>
+            <Point x="512" y="489"/>
+        </Association>
+    </Class>
+    <Class name="dp.els.config.LayerConfig" x="922" y="463">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.config.ButtonConfig" x="568" y="509">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.config.SystemConfig" x="42" y="271">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.config.FrameConfig" x="687" y="254">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.config.ButtonConfig"
+            endpointName="buttonConfig" kind="Simple"/>
+        <Association destinationClassName="dp.els.config.LayerConfig"
+            endpointName="layersConfig" kind="Simple"/>
+    </Class>
+    <Class name="dp.els.config.DataInterfaceConfig" x="332" y="539">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.config.GameConfig" x="392" y="86">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.config.FrameConfig"
+            endpointName="FRAME_CONFIG" kind="Simple"/>
+        <Association destinationClassName="dp.els.config.SystemConfig"
+            endpointName="SYSTEM_CONFIG" kind="Simple"/>
+        <Association destinationClassName="dp.els.config.DataConfig"
+            endpointName="DATA_CONFIG" kind="Simple"/>
+    </Class>
+</ClassDiagram>

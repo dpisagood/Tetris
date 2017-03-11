@@ -3,7 +3,7 @@ package dp.els.ui;
 import java.awt.Graphics;
 import java.awt.Point;
 
-import config.GameConfig;
+import dp.els.config.GameConfig;
 import dp.els.entity.GameAct;
 
 public  class LayerGame extends Layer {
@@ -14,7 +14,9 @@ public  class LayerGame extends Layer {
 		public LayerGame(int x, int y,int w,int h){
 		    	super(x,y,w,h);
 		    }
-		    
+	/**
+	 * ªÊ÷∆”Œœ∑∑ΩøÈ 
+	 */
 	 public void paint(Graphics g){
 	        this.createWindow(g);
 	        GameAct act=this.dto.getGameAct();

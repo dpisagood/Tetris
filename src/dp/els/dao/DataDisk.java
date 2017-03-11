@@ -10,6 +10,11 @@ import java.util.List;
 
 import dp.els.dto.Player;
 
+/**
+ * 对本地硬盘数据进行操作的方法
+ * @author DP
+ *
+ */
 public class DataDisk implements IData{
 	private  final String filepath;
 	@SuppressWarnings("unchecked")
@@ -33,7 +38,7 @@ public class DataDisk implements IData{
 		return players;
 	}
 	
-public DataDisk(HashMap<String,String> param){
+	public DataDisk(HashMap<String,String> param){
 		this.filepath=param.get("path");
 	}
 
@@ -41,10 +46,6 @@ public DataDisk(HashMap<String,String> param){
 	public void saveData(Player pla) {
 		//先取出数据
 		List<Player> players =this.getData();
-		//TODO 判断数据记录是否超过5条，超过的话，去掉分数低的。
-//		if(players.size()>5){
-//			players.sort(null);
-//		}
 		//追加新纪录
 		players.add(pla);
 		//重新写入

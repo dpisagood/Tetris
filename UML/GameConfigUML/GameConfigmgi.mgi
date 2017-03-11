@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="dp.els.config.LayerConfig" x="1000" y="478"/>
+    <CommunicationClass name="dp.els.ui.LayerLevel" x="84" y="30">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Association destinationClassName="dp.els.config.FrameConfig"
+            endpointName="cfg" kind="Simple"/>
+        <Communication destinationClassName="dp.els.config.FrameConfig">
+            <Point x="22" y="363"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.config.GameConfig">
+            <Point x="209" y="160"/>
+        </Communication>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.entity.GameAct" x="1022" y="12">
+        <Communication destinationClassName="dp.els.config.SystemConfig">
+            <Point x="1023" y="361"/>
+        </Communication>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.Layer" x="214" y="15">
+        <Communication destinationClassName="dp.els.config.FrameConfig">
+            <Point x="103" y="451"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.config.GameConfig"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.config.ButtonConfig" x="766" y="482"/>
+    <CommunicationClass name="dp.els.config.SystemConfig" x="822" y="370"/>
+    <CommunicationClass name="dp.els.ui.LayerPoint" x="787" y="10">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.config.SystemConfig">
+            <Point x="947" y="354"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.LayerGame" x="573" y="22">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.config.SystemConfig">
+            <Point x="776" y="328"/>
+            <Point x="825" y="371"/>
+            <Point x="811" y="363"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.config.FrameConfig">
+            <Point x="170" y="391"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.entity.GameAct"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.config.FrameConfig" x="40" y="385">
+        <Association destinationClassName="dp.els.config.ButtonConfig"
+            endpointName="buttonConfig" kind="Simple"/>
+        <Association destinationClassName="dp.els.config.LayerConfig"
+            endpointName="layersConfig" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.window.JPanelGame" x="328" y="24">
+        <Association destinationClassName="dp.els.ui.Layer"
+            endpointName="layers" kind="Simple"/>
+        <Communication destinationClassName="dp.els.config.ButtonConfig">
+            <Point x="826" y="398"/>
+            <Point x="732" y="479"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.config.FrameConfig"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.config.GameConfig">
+            <Point x="502" y="64"/>
+            <Point x="566" y="138"/>
+        </Communication>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.config.DataInterfaceConfig" x="421" y="478"/>
+    <CommunicationClass name="dp.els.config.GameConfig" x="479" y="206">
+        <Association destinationClassName="dp.els.config.FrameConfig"
+            endpointName="FRAME_CONFIG" kind="Simple"/>
+        <Association destinationClassName="dp.els.config.SystemConfig"
+            endpointName="SYSTEM_CONFIG" kind="Simple"/>
+    </CommunicationClass>
+</ClassDiagram>

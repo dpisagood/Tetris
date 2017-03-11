@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import config.GameConfig;
+import dp.els.config.GameConfig;
 import dp.els.entity.GameAct;
 import dp.els.util.GameFunction;
 //数据类
@@ -25,7 +25,7 @@ public class GameDto {
      private int nowRemoveLine;//消行
      private boolean start;//游戏是否是开始状态
      private boolean showShadow;//是否显示阴影
-     private boolean pause;
+     private boolean pause;//暂停
      private long sleepTime;//线程休眠时间
      
      public long getSleepTime() {

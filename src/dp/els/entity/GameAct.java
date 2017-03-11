@@ -3,7 +3,7 @@ package dp.els.entity;
 import java.awt.Point;
 import java.util.List;
 
-import config.GameConfig;
+import dp.els.config.GameConfig;
 
 //·½¿éÀà
 public class GameAct {

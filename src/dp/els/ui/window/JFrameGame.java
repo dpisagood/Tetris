@@ -2,12 +2,17 @@ package dp.els.ui.window;
 
 import javax.swing.JFrame;
 
-import config.FrameConfig;
-import config.GameConfig;
+import dp.els.config.FrameConfig;
+import dp.els.config.GameConfig;
 import dp.els.util.FrameUtil;
 
+/**
+ * 游戏主窗口
+ * @author DP
+ *
+ */
 @SuppressWarnings("serial")
-public class JFrameGame extends JFrame{//游戏窗口
+public class JFrameGame extends JFrame{
 	
 	
      public JFrameGame(JPanelGame panelGame){

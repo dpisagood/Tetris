@@ -5,8 +5,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
-import config.FrameConfig;
-import config.GameConfig;
+import dp.els.config.FrameConfig;
+import dp.els.config.GameConfig;
 import dp.els.dto.GameDto;
 
 /*绘制窗口
@@ -48,7 +48,10 @@ abstract public class Layer {
     protected  final int h;
     //游戏数据    
     protected GameDto dto =null;
-    
+	public void setDto(GameDto dto) {
+		this.dto = dto;
+	}
+	
     protected Layer(int x ,int y, int w, int h){
     	this.x =x;
     	this.y=y;
@@ -56,6 +59,8 @@ abstract public class Layer {
     	this.w=w;
     	rectW=IMG_RECT_W+4;
     }
+    
+    
     /**
      * 刷新游戏具体内容
      * @author dingpeng 
@@ -79,10 +84,6 @@ abstract public class Layer {
    	    g.drawImage(Img.WINDOW,   x,         y+BORDER+h,  x+w,    y+h+2*BORDER,  x,     y,   WINDOW_W,   BORDER, null);
     	
     }
-	public void setDto(GameDto dto) {
-		this.dto = dto;
-	}
-	
 	
 	  /**
 	   * 显示数字

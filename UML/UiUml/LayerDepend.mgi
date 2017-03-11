@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="dp.els.ui.LayerAbout" x="213" y="164">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.LayerLevel" x="285" y="547">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer">
+            <Point x="566" y="527"/>
+            <Point x="628" y="434"/>
+        </Communication>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.Img" x="65" y="117"/>
+    <CommunicationClass name="dp.els.ui.Layer" x="568" y="278"/>
+    <CommunicationClass name="dp.els.ui.LayerDisk" x="915" y="544">
+        <Extension destinationClassName="dp.els.ui.LayerData"/>
+        <Communication destinationClassName="dp.els.ui.LayerData"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.window.JFrameSavePoint" x="732" y="499"/>
+    <CommunicationClass name="dp.els.ui.LayerData" x="920" y="275">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.window.JFrameUserConfig" x="553" y="572">
+        <Communication destinationClassName="dp.els.ui.Img"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.LayerNext" x="164" y="447">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer">
+            <Point x="373" y="428"/>
+            <Point x="479" y="402"/>
+        </Communication>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.LayerDataBase" x="891" y="71">
+        <Extension destinationClassName="dp.els.ui.LayerData"/>
+        <Communication destinationClassName="dp.els.ui.LayerData"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.window.JFrameGame" x="798" y="631"/>
+    <CommunicationClass name="dp.els.ui.LayerPoint" x="644" y="38">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.LayerGame" x="130" y="308">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.LayerBackground" x="61" y="550">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.window.JPanelGame" x="153" y="22">
+        <Association destinationClassName="dp.els.ui.Layer"
+            endpointName="layers" kind="Simple"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.LayerButton" x="365" y="62">
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </CommunicationClass>
+</ClassDiagram>

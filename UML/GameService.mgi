@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="dp.els.service.GameService" x="219" y="91"/>
+    <CommunicationClass name="dp.els.ui.window.TextCtrl" x="911" y="419"/>
+    <CommunicationClass name="dp.els.ui.window.JFrameSavePoint" x="678" y="363">
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.dto.GameDto" x="1063" y="101">
+        <Association destinationClassName="dp.els.entity.GameAct"
+            endpointName="gameAct" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.window.JFrameUserConfig" x="358" y="435">
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple"/>
+        <Association destinationClassName="dp.els.ui.window.TextCtrl"
+            endpointName="keyTexts" kind="Simple"/>
+        <Communication destinationClassName="dp.els.ui.window.TextCtrl"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.control.GameControl" x="651" y="128">
+        <Association
+            destinationClassName="dp.els.ui.window.JFrameSavePoint"
+            endpointName="frameSavePoint" kind="Simple"/>
+        <Association
+            destinationClassName="dp.els.ui.window.JFrameUserConfig"
+            endpointName="frameConfig" kind="Simple"/>
+        <Association destinationClassName="dp.els.ui.window.JPanelGame"
+            endpointName="panelGame" kind="Simple"/>
+        <Association destinationClassName="dp.els.service.GameService"
+            endpointName="gameService" kind="Simple"/>
+        <Association destinationClassName="dp.els.dto.GameDto"
+            endpointName="dto" kind="Simple"/>
+        <Communication destinationClassName="dp.els.service.GameService">
+            <Point x="523" y="268"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.ui.window.JFrameSavePoint"/>
+        <Communication destinationClassName="dp.els.dto.GameDto">
+            <Point x="777" y="259"/>
+            <Point x="871" y="101"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.ui.window.JPanelGame"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.ui.window.JPanelGame" x="496" y="351">
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.control.PlayerControl" x="216" y="258">
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple"/>
+        <Communication destinationClassName="dp.els.control.GameControl"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.entity.GameAct" x="1134" y="395"/>
+    <CommunicationClass name="dp.els.service.GameTetris" x="843" y="298">
+        <Extension destinationClassName="dp.els.service.GameService"/>
+        <Association destinationClassName="dp.els.dto.GameDto"
+            endpointName="dto" kind="Simple"/>
+        <Communication destinationClassName="dp.els.dto.GameDto">
+            <Point x="905" y="272"/>
+            <Point x="984" y="279"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.entity.GameAct"/>
+    </CommunicationClass>
+    <CommunicationClass name="dp.els.control.GameControl.MainThread"
+        x="605" y="13">
+        <Communication destinationClassName="dp.els.service.GameService">
+            <Point x="512" y="113"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.dto.GameDto">
+            <Point x="887" y="43"/>
+            <Point x="986" y="32"/>
+        </Communication>
+        <Communication destinationClassName="dp.els.control.GameControl"/>
+    </CommunicationClass>
+</ClassDiagram>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="dp.els.service.GameService" x="369" y="436">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.dao.DataDisk" x="722" y="678">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.dao.IData"/>
+    </Class>
+    <Class name="dp.els.dto.GameDto" x="57" y="337">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.entity.GameAct"
+            endpointName="gameAct" kind="Simple"/>
+    </Class>
+    <Class name="dp.els.ui.window.JFrameSavePoint" x="932" y="184">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple"/>
+    </Class>
+    <Class name="dp.els.ui.window.JFrameUserConfig" x="790" y="-71">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple">
+            <Point x="666" y="115"/>
+        </Association>
+    </Class>
+    <Class name="dp.els.dao.IData" x="579" y="545">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.control.GameControl" x="478" y="187">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="dp.els.ui.window.JFrameSavePoint"
+            endpointName="frameSavePoint" kind="Simple">
+            <Point x="695" y="219"/>
+            <Point x="722" y="226"/>
+            <Point x="850" y="205"/>
+        </Association>
+        <Association
+            destinationClassName="dp.els.ui.window.JFrameUserConfig"
+            endpointName="frameConfig" kind="Simple">
+            <Point x="570" y="123"/>
+        </Association>
+        <Association destinationClassName="dp.els.dao.IData"
+            endpointName="dataB" kind="Simple">
+            <Point x="610" y="528"/>
+            <Point x="598" y="537"/>
+        </Association>
+        <Association destinationClassName="dp.els.dao.IData"
+            endpointName="dataA" kind="Simple">
+            <Point x="671" y="431"/>
+            <Point x="681" y="473"/>
+        </Association>
+        <Association destinationClassName="dp.els.ui.window.JPanelGame"
+            endpointName="panelGame" kind="Simple"/>
+        <Association destinationClassName="dp.els.service.GameService"
+            endpointName="gameService" kind="Simple"/>
+        <Association destinationClassName="dp.els.dto.GameDto"
+            endpointName="dto" kind="Simple"/>
+        <Communication destinationClassName="dp.els.service.GameService"/>
+        <Communication destinationClassName="dp.els.dto.GameDto"/>
+        <Communication destinationClassName="dp.els.ui.window.JFrameSavePoint"/>
+        <Communication destinationClassName="dp.els.dao.IData"/>
+        <Communication destinationClassName="dp.els.ui.window.JPanelGame"/>
+    </Class>
+    <Class name="dp.els.ui.window.JPanelGame" x="194" y="-61">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple">
+            <Point x="410" y="38"/>
+        </Association>
+    </Class>
+    <Class name="dp.els.entity.GameAct" x="-171" y="220">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.dao.DataBase" x="474" y="683">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.dao.IData"/>
+    </Class>
+    <Class name="dp.els.service.GameTetris" x="147" y="661">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.service.GameService"/>
+        <Association destinationClassName="dp.els.dto.GameDto"
+            endpointName="dto" kind="Simple"/>
+        <Communication destinationClassName="dp.els.dto.GameDto"/>
+        <Communication destinationClassName="dp.els.entity.GameAct"/>
+    </Class>
+    <Class name="dp.els.control.GameControl.MainThread" x="403" y="189">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="dp.els.service.GameService"/>
+        <Communication destinationClassName="dp.els.dto.GameDto"/>
+        <Communication destinationClassName="dp.els.control.GameControl"/>
+    </Class>
+</ClassDiagram>

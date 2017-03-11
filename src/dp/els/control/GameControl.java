@@ -10,21 +10,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import config.DataInterfaceConfig;
-import config.GameConfig;
+import dp.els.config.DataInterfaceConfig;
+import dp.els.config.GameConfig;
 import dp.els.dao.IData;
 import dp.els.dto.GameDto;
 import dp.els.dto.Player;
 import dp.els.service.GameService;
 import dp.els.service.GameTetris;
-import dp.els.ui.window.JFrameConfig;
+import dp.els.ui.window.JFrameUserConfig;
 import dp.els.ui.window.JFrameGame;
 import dp.els.ui.window.JFrameSavePoint;
 import dp.els.ui.window.JPanelGame;
 
 
 /**
- *，把它与Panel建立联系，而他自己又受PlayerControl控制
+ * 把它与Panel建立联系，而他自己又受PlayerControl控制
  * 接收玩家键盘事件
  * 控制游戏画面
  * 控制游戏逻辑
@@ -34,7 +34,7 @@ public class GameControl  {
 	//游戏逻辑层（提供游戏动作逻辑服务的类，交给GameControl监听控制）
 	private GameService gameService;
 	//游戏控制窗口
-	private JFrameConfig frameConfig;
+	private JFrameUserConfig frameConfig;
 	//游戏界面层（与界面建立联系）
 	private JPanelGame panelGame; 
 	//数据访问接口A
@@ -69,7 +69,7 @@ public GameControl(){
 		//读取用户控制设置
 		this.setContorlConfig();
 		//初始化用户配置窗口
-		this.frameConfig=new JFrameConfig(this);
+		this.frameConfig=new JFrameUserConfig(this);
 		//创建游戏主窗口，安装游戏面板
 		new JFrameGame(this.panelGame);
 		//初始化得分保存分数窗口
@@ -77,7 +77,9 @@ public GameControl(){
 		
 	}
 
-
+	/**
+	 * 读取用户配置到HashMap中，键盘标号和游戏中的方法名相互映射
+	 */
 	private void setContorlConfig(){
 		  //创建键盘码与方法名的映射数组
 		  this.actionList=new HashMap<Integer,Method>();
@@ -86,8 +88,9 @@ public GameControl(){
 			@SuppressWarnings("unchecked")
 			HashMap<Integer,String> cfgSet=(HashMap<Integer,String>)ois.readObject();
 			ois.close();
-			Set<Entry<Integer,String>> entryset=cfgSet.entrySet();
-			for (Entry<Integer, String> entry : entryset) {
+			for (Map.Entry<Integer, String> entry : cfgSet.entrySet()) {
+//				System.out.println(entry.getKey());
+//				System.out.println(entry.getValue());//75,keyFunDown
 				this.actionList.put(entry.getKey(), this.gameService.getClass().getMethod(entry.getValue()));
 			}
 		  } catch (Exception e) {
@@ -113,7 +116,11 @@ public GameControl(){
 			return null;
 		}
 	}
-
+	
+	/**
+	 * 通过键盘的标号，找到配置中相对应的处理方法 
+	 * @param keyCode
+	 */
 	public void actionByKeyCode(int keyCode) {
 		try {
 			if(this.actionList.containsKey(keyCode)){
@@ -191,8 +198,7 @@ public GameControl(){
 				try {
 					//线程睡眠
 					Thread.sleep(dto.getSleepTime());
-					System.out.println(dto.getSleepTime());
-					if(dto.isPause()){
+					if(dto.isPause()){//是否是暂停状态
 						continue;
 					}
 					//方块下落
@@ -207,8 +213,10 @@ public GameControl(){
 					afterLose();
 		}
 	}
-	
-	
+	//刷新画面
+	public void repaint(){
+		this.panelGame.repaint();
+	}
 }
 
 	

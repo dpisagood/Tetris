@@ -3,7 +3,7 @@ package dp.els.service;
 import java.awt.Point;
 import java.util.Random;
 
-import config.GameConfig;
+import dp.els.config.GameConfig;
 import dp.els.dto.GameDto;
 import dp.els.entity.GameAct;
 
@@ -40,7 +40,7 @@ public class GameTetris implements GameService{
 		if(this.dto.isPause()){
 				return true;
 		}
-		  synchronized (this.dto) {
+		  synchronized (this.dto) {//同步控制块，保护dto对象不同时被多个线程访问
 		//判断是否再能往下移动（如果能返回操作，如不能继续操作即堆积）
 		if(this.dto.getGameAct().move(0, 1,this.dto.getGameMap())){
 	        return false;

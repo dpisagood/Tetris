@@ -12,6 +12,11 @@ import java.util.Random;
 
 import dp.els.dto.Player;
 
+/**
+ * 对oracle数据库的操作
+ * @author DP
+ *
+ */
 public class DataBase implements IData {
 	private final String dbUrl ;
 	private final String dbUser ;
@@ -83,14 +88,4 @@ public class DataBase implements IData {
 			}
 		}
 	}
-
-//	 public static void main(String[] args) throws Exception {
-//	 DataBase db=new DataBase();
-////	 List<Player> players=db.getData();
-////	 for (Player p:players) {
-////	 System.out.println("姓名："+p.getName()+"----"+p.getPoint());
-////	 }
-//	 	db.saveData(new Player("丁鹏",9999));
-//	 }
-
 }

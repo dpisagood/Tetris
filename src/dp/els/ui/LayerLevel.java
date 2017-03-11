@@ -2,8 +2,8 @@ package dp.els.ui;
 
 import java.awt.Graphics;
 
-import config.FrameConfig;
-import config.GameConfig;
+import dp.els.config.FrameConfig;
+import dp.els.config.GameConfig;
 
 public class LayerLevel extends Layer {
 	 FrameConfig cfg=GameConfig.getFrameConfig();

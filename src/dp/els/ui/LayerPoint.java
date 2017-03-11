@@ -2,7 +2,7 @@ package dp.els.ui;
 
 import java.awt.Graphics;
 
-import config.GameConfig;
+import dp.els.config.GameConfig;
 
 public class LayerPoint extends Layer {
 	//Éý¼¶º¯Êý

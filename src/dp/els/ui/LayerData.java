@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.List;
 
-import config.GameConfig;
+import dp.els.config.GameConfig;
 import dp.els.dto.Player;
 
 	abstract public class LayerData  extends Layer {

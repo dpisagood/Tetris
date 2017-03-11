@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="dp.els.ui.window.TextCtrl" x="1119" y="-16">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.ui.LayerAbout" x="35" y="222">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.LayerLevel" x="734" y="240">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.Layer" x="423" y="1">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="dp.els.ui.LayerDisk" x="996" y="455">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.LayerData"/>
+        <Communication destinationClassName="dp.els.ui.LayerData"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.window.JFrameSavePoint" x="642" y="-205">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple"/>
+    </Class>
+    <Class name="dp.els.ui.LayerData" x="697" y="34">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.window.JFrameUserConfig" x="846" y="-225">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple"/>
+        <Association destinationClassName="dp.els.ui.window.TextCtrl"
+            endpointName="keyTexts" kind="Simple"/>
+        <Communication destinationClassName="dp.els.ui.window.TextCtrl"/>
+    </Class>
+    <Class name="dp.els.ui.LayerNext" x="486" y="445">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.LayerDataBase" x="1114" y="391">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.LayerData"/>
+        <Communication destinationClassName="dp.els.ui.LayerData"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.LayerPoint" x="659" y="346">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.LayerGame" x="12" y="334">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.LayerBackground" x="324" y="448">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.ui.window.JPanelGame" x="381" y="-219">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="dp.els.ui.Layer"
+            endpointName="layers" kind="Simple"/>
+        <Association destinationClassName="dp.els.control.GameControl"
+            endpointName="gameControl" kind="Simple"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.control.GameControl" x="537" y="-587">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="dp.els.ui.window.JFrameSavePoint"
+            endpointName="frameSavePoint" kind="Simple"/>
+        <Association
+            destinationClassName="dp.els.ui.window.JFrameUserConfig"
+            endpointName="frameConfig" kind="Simple"/>
+        <Association destinationClassName="dp.els.ui.window.JPanelGame"
+            endpointName="panelGame" kind="Simple"/>
+        <Communication destinationClassName="dp.els.ui.window.JFrameSavePoint"/>
+        <Communication destinationClassName="dp.els.ui.window.JPanelGame"/>
+    </Class>
+    <Class name="dp.els.ui.LayerButton" x="137" y="440">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="dp.els.ui.Layer"/>
+        <Communication destinationClassName="dp.els.ui.Layer"/>
+    </Class>
+    <Class name="dp.els.control.GameControl.MainThread" x="673" y="-545">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="dp.els.control.GameControl"/>
+    </Class>
+</ClassDiagram>

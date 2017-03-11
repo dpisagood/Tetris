@@ -3,7 +3,12 @@ package dp.els.control;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-//¿ØÖÆÆ÷(Ïàµ±ÓÚÍæ¼Ò¿ØÖÆ),ÓÃÓÚ¿ØÖÆGameControl
+/**
+ * Õâ¸ö¼àÌıÆ÷ÊÇÓÃÀ´¼àÌıÍæ¼Ò¼üÅÌµÄ²Ù×÷µÄ£¬Î¨Ò»µÄÓÎÏ·¹ı³ÌÖĞµÄ½»»¥
+ * @param gameControl ¼àÌıÆ÷Í¨¹ı³ÖÓĞÓÎÏ·¿ØÖÆÆ÷¶ÔÏó£¬µ±Íæ¼ÒÓĞ²Ù×÷Ê±£¨°´¼ü£©Ê±£¬ÓÃÕâ¸ö¶ÔÏóµ÷ÓÃ´¦Àí·½·¨
+ * @author DP
+ *
+ */
 public class PlayerControl extends KeyAdapter {//ÊµÏÖ¼àÌıÆ÷½Ó¿Ú²¢¸²Ğ´Æä·½·¨½øĞĞ¼àÌı²Ù×÷
              
 	private GameControl gameControl;
@@ -13,11 +18,12 @@ public class PlayerControl extends KeyAdapter {//ÊµÏÖ¼àÌıÆ÷½Ó¿Ú²¢¸²Ğ´Æä·½·¨½øĞĞ¼
 	
 	//KeyAdapter¼Ì³ĞÁËKeyListener½Ó¿Ú£¬¼Ì³ĞÕâ¸öÀàÖ®ºóÎÒÃÇ¾Í²»ÓÃÔÙ¸²Ğ´//¼àÌı¼üÈë//¼àÌı·Å¿ª°´¼üÁ½¸ö·½·¨
 	/**
-	 *¼üÅÌ°´ÏÂÊÂ¼ş 
+	 * ¼üÅÌ°´ÏÂµ÷ÓÃgameControlµÄactionByKeyCode()·½·¨£¬²¢´«Èë¼üÅÌ±àºÅ£¬À´´¦ÀíÕâ¸öÊÂ¼ş
 	 */
+	@Override
 	public void keyPressed(KeyEvent e) {
-	this.gameControl.actionByKeyCode(e.getKeyCode());
-  }
+		this.gameControl.actionByKeyCode(e.getKeyCode());
+	}
 	
 
 }
