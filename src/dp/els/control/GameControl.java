@@ -7,19 +7,17 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
+import dp.els.bean.GameDto;
+import dp.els.bean.Player;
 import dp.els.config.DataInterfaceConfig;
 import dp.els.config.GameConfig;
 import dp.els.dao.IData;
-import dp.els.dto.GameDto;
-import dp.els.dto.Player;
-import dp.els.service.GameService;
-import dp.els.service.GameTetris;
-import dp.els.ui.window.JFrameUserConfig;
+import dp.els.gameservice.GameService;
+import dp.els.gameservice.GameTetris;
 import dp.els.ui.window.JFrameGame;
 import dp.els.ui.window.JFrameSavePoint;
+import dp.els.ui.window.JFrameUserConfig;
 import dp.els.ui.window.JPanelGame;
 
 
@@ -51,9 +49,8 @@ public class GameControl  {
 	private JFrameSavePoint frameSavePoint;
 	
 public GameControl(){
-	
 		//创建游戏数据源
-		this.dto=new GameDto();
+		this.dto=GameDto.getGameDto();
 		//创建游戏逻辑块（连接游戏数据源）
 		this.gameService=new GameTetris(dto);
 		//创建数据接口A对象
@@ -98,6 +95,7 @@ public GameControl(){
 		} 
 	}
 
+
 	/**
 	 * 创建数据对象
 	 * @param cfg
@@ -106,7 +104,7 @@ public GameControl(){
 	private IData createDataObject(DataInterfaceConfig cfg){
 		try {
 			//获得类对象
-			Class<?> cls=Class.forName(cfg.getClassName());
+			Class<?> cls=Class.forName(cfg.getClassName()); 
 			//获得构造器
 			Constructor<?> ctr=cls.getConstructor(HashMap.class);
 			//创建对象
@@ -116,6 +114,7 @@ public GameControl(){
 			return null;
 		}
 	}
+	
 	
 	/**
 	 * 通过键盘的标号，找到配置中相对应的处理方法 

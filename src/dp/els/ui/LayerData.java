@@ -4,11 +4,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.List;
 
+import dp.els.bean.Player;
 import dp.els.config.GameConfig;
-import dp.els.dto.Player;
 
 	abstract public class LayerData  extends Layer {
-	
 		//最大数据行
 		private static final int MAX_ROW=GameConfig.getDataConfig().getMaxRow();
 		//起始y坐标

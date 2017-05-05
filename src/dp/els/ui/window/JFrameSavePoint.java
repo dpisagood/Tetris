@@ -56,6 +56,7 @@ public class JFrameSavePoint extends JFrame {
 			}else{
 				setVisible(false);
 				gameControl.savePoint(name);
+				
 			}
 		});
 	}

@@ -3,8 +3,9 @@ package dp.els.ui;
 import java.awt.Graphics;
 import java.awt.Point;
 
+import dp.els.bean.Square;
 import dp.els.config.GameConfig;
-import dp.els.entity.GameAct;
+import dp.els.util.ConfigConstant;
 
 public  class LayerGame extends Layer {
 		private  static  final int LEFT_SIZE=GameConfig.getSystemConfig().getMinX();
@@ -19,10 +20,10 @@ public  class LayerGame extends Layer {
 	 */
 	 public void paint(Graphics g){
 	        this.createWindow(g);
-	        GameAct act=this.dto.getGameAct();
-	        if(act!=null){
+	        Square square=this.dto.getGamesquare();
+	        if(square!=null){
 	        	//获得方块数组集合
-		        Point[] points=act.getActPoint();
+		        Point[] points=square.getActPoint();
 		        //绘制阴影 
 		        this.drawShadow(points,g);
 			    //绘制活动方块
@@ -39,7 +40,7 @@ public  class LayerGame extends Layer {
  	//绘制地图
 	private void drawMap(Graphics g) {
 	        //打印地图
-         boolean[][] map=this.dto.getGameMap();
+         boolean[][] map=ConfigConstant.gameMap;
          //计算当前堆积颜色
          int lv =this.dto.getNowlevel();
          //小算法
@@ -56,7 +57,7 @@ public  class LayerGame extends Layer {
 	//绘制活动方块
 	private void drawMainAct(Point[] points,Graphics g) {
         //获得方块 类型编号（0——6）
-        int typeCode=this.dto.getGameAct().getTypeCode();
+        int typeCode=this.dto.getGamesquare().getTypeCode();
         typeCode=this.dto.isStart()?typeCode:LOSE_IDX;
         //绘制方块
         for(int i=0; i < points.length;i++){

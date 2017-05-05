@@ -51,20 +51,24 @@
 	</system>
 	
 	<data maxRow="5">
-		<dataA className="dp.els.dao.DataBase">
+		<database>
+			<dataA className="dp.els.dao.DataBaseImplements">
 				<param key ="driver" value="oracle.jdbc.driver.OracleDriver"/>
 				<param key ="dbUrl"  value="jdbc:oracle:thin:@localhost:1521:Iamdp"/>
 				<param key ="dbUser" value="scott"/>
 				<param key ="dbPwd"  value="tiger"/>
-		</dataA>
-		
-		<dataB className="dp.els.dao.DataDisk">
+			</dataA>
+		</database>
+	
+		<disk>
+			<dataB className="dp.els.dao.DataDiskImplements">
 				<param key ="path" value="data/recode.dat"/>
 				<param key ="" value=""/>
 				<param key ="" value=""/>
 				<param key ="" value=""/>
 				<param key ="" value=""/>
-		</dataB>
+			</dataB>
+		</disk>
  	</data>
 
 </game>

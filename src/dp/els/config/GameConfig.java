@@ -2,7 +2,9 @@ package dp.els.config;
 
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -22,7 +24,7 @@ public class GameConfig {
 	private static SystemConfig SYSTEM_CONFIG=null;
 	private static ButtonConfig BUTTON_CONFIG=null;
 	//是否是开发环境
-	private static boolean ISDEBUG=true;
+	private static boolean ISDEBUG=false;
 	private static ObjectInputStream ois=null;
 	private static ObjectOutputStream oos=null;
 	static {
@@ -106,7 +108,7 @@ public class GameConfig {
 			try {
 				ois = new ObjectInputStream(new FileInputStream(path));
 				return ois.readObject();
-			} catch (Exception e) {
+			}catch (Exception e) {
 				e.printStackTrace();
 				return null;
 			} 
@@ -119,8 +121,17 @@ public class GameConfig {
 	 * @param object 写入整个类的数据，这个类必须实现序列化
 	 * @throws Exception
 	 */
-	private static void writeObject(String path ,Object object) throws Exception{
-			oos = new ObjectOutputStream(new FileOutputStream(path));
-			oos.writeObject(object);
+	private static void writeObject(String path ,Object object){
+			try {
+				oos = new ObjectOutputStream(new FileOutputStream(path));
+				oos.writeObject(object);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 	}
 }

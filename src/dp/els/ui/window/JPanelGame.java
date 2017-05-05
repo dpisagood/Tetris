@@ -10,12 +10,12 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import dp.els.bean.GameDto;
 import dp.els.config.FrameConfig;
 import dp.els.config.GameConfig;
 import dp.els.config.LayerConfig;
 import dp.els.control.GameControl;
 import dp.els.control.PlayerControl;
-import dp.els.dto.GameDto;
 import dp.els.ui.Img;
 import dp.els.ui.Layer;
 
@@ -124,7 +124,11 @@ public class JPanelGame extends JPanel{
 	}
 
     /**
+     * 重写JPanel中的 paintComponent
+     * 改变组件样式，如果要保留原来的组件样式要记得用super.paintComponent
+     * 调用一下父类的方法先
      * 循环绘制游戏面板中的Layer
+     * 
      */
    @Override
 	public  void paintComponent(Graphics g){

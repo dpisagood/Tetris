@@ -5,9 +5,9 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
+import dp.els.bean.GameDto;
 import dp.els.config.FrameConfig;
 import dp.els.config.GameConfig;
-import dp.els.dto.GameDto;
 
 /*»æÖÆ´°¿Ú
  * @dingpeng
